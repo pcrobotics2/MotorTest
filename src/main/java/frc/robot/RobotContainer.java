@@ -21,7 +21,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  public CommandJoystick controller = new CommandJoystick(0);
+  public CommandJoystick controller0 = new CommandJoystick(0);
   public MotorSubsystem motorSubsystem = new MotorSubsystem();
   public MotorTestCMD motorTest = new MotorTestCMD();
 
@@ -31,7 +31,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
-    controller.button(Constants.buttonList.x);
+    controller0.button(Constants.buttonList.x);
   }
 
   /**
