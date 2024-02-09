@@ -23,7 +23,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public CommandJoystick controller0 = new CommandJoystick(0);
   public MotorSubsystem motorSubsystem = new MotorSubsystem();
-  public MotorTestCMD motorTest = new MotorTestCMD();
+  public MotorTestCMD motorTestCMD = new MotorTestCMD(motorSubsystem);
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
 
@@ -31,7 +31,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
-    controller0.button(Constants.buttonList.x);
+    controller0.button(Constants.buttonList.x).whileTrue(motorTestCMD);
   }
 
   /**

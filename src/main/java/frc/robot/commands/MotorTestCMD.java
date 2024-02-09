@@ -8,18 +8,18 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.MotorSubsystem;
 
 public class MotorTestCMD extends Command {
-  public MotorSubsystem motorSubsytem;
+  public MotorSubsystem motorSubsystem;
   /** Creates a new MotorTest. */
-  public MotorTestCMD() {
+  public MotorTestCMD(MotorSubsystem motorSubsystem) {
     // Use addRequirements() here to declare subsystem dependencies.
-    this.motorSubsytem = motorSubsytem;
-    addRequirements(motorSubsytem);
+    this.motorSubsystem = motorSubsystem;
+    addRequirements(motorSubsystem);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    motorSubsytem.setMotor(5);
+    motorSubsystem.setMotor(0.05);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -28,7 +28,9 @@ public class MotorTestCMD extends Command {
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    motorSubsystem.setMotor(0);
+  }
 
   // Returns true when the command should end.
   @Override

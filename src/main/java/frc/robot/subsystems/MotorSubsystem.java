@@ -11,7 +11,7 @@ public class MotorSubsystem extends SubsystemBase {
   /** Creates a new MotorSubsystem. */
   public CANSparkMax motor;
   public MotorSubsystem() {
-    this.motor = new CANSparkMax(1, MotorType.kBrushless); //replace number with CS## on MotorController
+    this.motor = new CANSparkMax(22, MotorType.kBrushless); //replace number with CS## on MotorController
   }
 
   @Override
@@ -19,7 +19,7 @@ public class MotorSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void setMotor(double Voltage){
-    motor.setVoltage(Voltage);
+  public void setMotor(double speed){
+    motor.set(speed);
   }
 }
