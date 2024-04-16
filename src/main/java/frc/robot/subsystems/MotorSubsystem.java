@@ -5,14 +5,20 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
+import static edu.wpi.first.units.Units.Volts;
+
+import com.ctre.phoenix.Logger;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 public class MotorSubsystem extends SubsystemBase {
   /** Creates a new MotorSubsystem. */
   public CANSparkMax motor;
+  public SysIdRoutine sysIdRoutine;
   public MotorSubsystem() {
     this.motor = new CANSparkMax(22, MotorType.kBrushless); //replace number with CS## on MotorController
   }
+  
 
   @Override
   public void periodic() {
@@ -21,5 +27,9 @@ public class MotorSubsystem extends SubsystemBase {
 
   public void setMotor(double speed){
     motor.set(speed);
+  }
+  public void runVolts(double voltage) {
+    motor.setVoltage(voltage);
+    System.out.println("voltage: " + voltage);
   }
 }
