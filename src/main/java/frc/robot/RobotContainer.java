@@ -63,6 +63,12 @@ sysIdRoutine.dynamic(SysIdRoutine.Direction.kReverse);
 // ); 
     controller0.button(Constants.buttonList.b).toggleOnTrue(sysIdRoutine.quasistatic(SysIdRoutine.Direction.kForward)
 );
+    controller0.button(Constants.buttonList.a).toggleOnTrue(sysIdRoutine.quasistatic(SysIdRoutine.Direction.kReverse));
+    controller0.button(Constants.buttonList.x).toggleOnTrue(sysIdRoutine.dynamic(SysIdRoutine.Direction.kForward));
+    controller0.button(Constants.buttonList.y).toggleOnTrue(sysIdRoutine.dynamic(SysIdRoutine.Direction.kReverse));
+
+
+
 
 
   }
